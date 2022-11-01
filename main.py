@@ -27,7 +27,7 @@ for acc in account:
         continue
     driver.implicitly_wait(1)
 
-    print(usr)
+    print("-------"+usr)
     driver.find_element(by=By.NAME, value='uid').send_keys(usr[0])
     driver.find_element(by=By.NAME, value='upw').send_keys(usr[1])
     driver.find_element(by=By.NAME, value='myform52').submit()  # TODO:频繁访问可能会出现验证码
