@@ -19,6 +19,7 @@ account = os.environ.get('ACCOUNT').split(';')  # 字符串预处理
 driver = webdriver.Chrome(options=option, service=serv)  # 启动浏览器
 for acc in account:
     usr = acc.split(',',1)
+    print("-------"+usr)
     try:
         driver.get('https://jksb.v.zzu.edu.cn/vls6sss/zzujksb.dll/first0')  # 进入登陆界面
     except selenium.common.exceptions.WebDriverException:
