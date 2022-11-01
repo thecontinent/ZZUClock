@@ -19,7 +19,7 @@ account = os.environ.get('ACCOUNT').split(';')  # 字符串预处理
 driver = webdriver.Chrome(options=option, service=serv)  # 启动浏览器
 for acc in account:
     usr = acc.split(',',1)
-    print("-------"+usr)
+    print(usr)
     try:
         driver.get('https://jksb.v.zzu.edu.cn/vls6sss/zzujksb.dll/first0')  # 进入登陆界面
     except selenium.common.exceptions.WebDriverException:
@@ -28,7 +28,7 @@ for acc in account:
         continue
     driver.implicitly_wait(1)
 
-    print("-------"+usr)
+    print(usr)
     driver.find_element(by=By.NAME, value='uid').send_keys(usr[0])
     driver.find_element(by=By.NAME, value='upw').send_keys(usr[1])
     driver.find_element(by=By.NAME, value='myform52').submit()  # TODO:频繁访问可能会出现验证码
